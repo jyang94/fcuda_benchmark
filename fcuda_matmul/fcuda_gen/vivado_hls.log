@@ -1,0 +1,48 @@
+================================================================
+  Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC
+  Version 2016.2
+  Build 1577090 on Thu Jun 02 16:59:10 MDT 2016
+  Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
+================================================================
+INFO: [HLS 200-10] Running '/opt/xilinx/vivado/2016.2/Vivado_HLS/2016.2/bin/unwrapped/lnx64.o/vivado_hls'
+INFO: [HLS 200-10] For user 'xu67' on host 'csl-403a-01.csl.illinois.edu' (Linux_x86_64 version 2.6.32-696.1.1.el6.x86_64) on Sat May 20 01:01:06 CDT 2017
+INFO: [HLS 200-10] On os "CentOS release 6.9 (Final)"
+INFO: [HLS 200-10] In directory '/home/xu67/thesis_fcuda/fcuda/fcuda-benchmarks/matmul/fcuda_gen'
+INFO: [HLS 200-10] Opening and resetting project '/home/xu67/thesis_fcuda/fcuda/fcuda-benchmarks/matmul/fcuda_gen/vec_add_hls'.
+INFO: [HLS 200-10] Adding design file 'fcuda_gen_matmul.c' to the project
+INFO: [HLS 200-10] Adding design file 'fcuda.h' to the project
+INFO: [HLS 200-10] Adding test bench file 'fcuda_gen_matmul.c' to the project
+INFO: [HLS 200-10] Opening and resetting solution '/home/xu67/thesis_fcuda/fcuda/fcuda-benchmarks/matmul/fcuda_gen/vec_add_hls/solution1'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+INFO: [HLS 200-10] Setting target device to 'xc7vx690tffg1761-2'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+   Compiling(apcc) ../../../../fcuda_gen_matmul.c in debug mode
+INFO: [HLS 200-10] Running '/opt/xilinx/vivado/2016.2/Vivado_HLS/2016.2/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'xu67' on host 'csl-403a-01.csl.illinois.edu' (Linux_x86_64 version 2.6.32-696.1.1.el6.x86_64) on Sat May 20 01:01:09 CDT 2017
+INFO: [HLS 200-10] On os "CentOS release 6.9 (Final)"
+INFO: [HLS 200-10] In directory '/home/xu67/thesis_fcuda/fcuda/fcuda-benchmarks/matmul/fcuda_gen/vec_add_hls/solution1/csim/build'
+../../../../fcuda_gen_matmul.c:1:10: fatal error: 'fcuda.h' file not found
+#include <fcuda.h>
+         ^
+1 error generated.
+CRITICAL WARNING: [HLS 200-101] Message ID '1-1' value invalid for uint argument.
+
+FORMAT
+  ap_puts_err [OPTIONS] [ Message namespace] [ Message ID] [ Message string]
+      <string>
+      <uint>
+      <string>
+
+make: *** [obj/fcuda_gen_matmul.o] Error 1
+CRITICAL WARNING: [SIM 211-1] 'csim_design' failed: compilation error(s).
+4
+    while executing
+"source run_hls.tcl"
+    invoked from within
+"hls::main run_hls.tcl"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel 1 hls::main {*}$args"
+    (procedure "hls_proc" line 5)
+    invoked from within
+"hls_proc $argv"

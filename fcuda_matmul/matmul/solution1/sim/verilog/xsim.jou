@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# xsim v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Sun Dec 10 22:51:53 2017
+# Process ID: 15747
+# Current directory: /home/xu67/thesis_fcuda/fcuda/fcuda-benchmarks/matmul/matmul/solution1/sim/verilog
+# Command line: xsim -mode tcl -source {xsim.dir/matrixMul/xsim_script.tcl}
+# Log file: /home/xu67/thesis_fcuda/fcuda/fcuda-benchmarks/matmul/matmul/solution1/sim/verilog/xsim.log
+# Journal file: /home/xu67/thesis_fcuda/fcuda/fcuda-benchmarks/matmul/matmul/solution1/sim/verilog/xsim.jou
+#-----------------------------------------------------------
+source xsim.dir/matrixMul/xsim_script.tcl
+source matrixMul.tcl
