@@ -1,0 +1,30 @@
+#-----------------------------------------------------------
+# xsim v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Sun Dec 10 22:51:53 2017
+# Process ID: 15747
+# Current directory: /home/xu67/thesis_fcuda/fcuda/fcuda-benchmarks/matmul/matmul/solution1/sim/verilog
+# Command line: xsim -mode tcl -source {xsim.dir/matrixMul/xsim_script.tcl}
+# Log file: /home/xu67/thesis_fcuda/fcuda/fcuda-benchmarks/matmul/matmul/solution1/sim/verilog/xsim.log
+# Journal file: /home/xu67/thesis_fcuda/fcuda/fcuda-benchmarks/matmul/matmul/solution1/sim/verilog/xsim.jou
+#-----------------------------------------------------------
+source xsim.dir/matrixMul/xsim_script.tcl
+# xsim {matrixMul} -autoloadwcfg -tclbatch {matrixMul.tcl}
+Vivado Simulator 2016.2
+Time resolution is 1 ps
+source matrixMul.tcl
+## run all
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 100010 ps  Iteration: 0  Process: /apatb_matrixMul_top/AESL_inst_matrixMul/grp_matrixMul_matrixMul_SNC_7_fu_239/matrixMul_fadd_32ns_32ns_32_5_full_dsp_U12/matrixMul_ap_fadd_3_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/speed_op/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /opt/xilinx/vivado/2016.2/Vivado/2016.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+////////////////////////////////////////////////////////////////////////////////////
+// Inter-Transaction Progress: Completed Transaction / Total Transaction
+// Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
+////////////////////////////////////////////////////////////////////////////////////
+// RTL Simulation : 0 / 1 [N/A] @ "125000"
+// RTL Simulation : 1 / 1 [N/A] @ "55862655000"
+////////////////////////////////////////////////////////////////////////////////////
+$finish called at time : 55862695 ns : File "/home/xu67/thesis_fcuda/fcuda/fcuda-benchmarks/matmul/matmul/solution1/sim/verilog/matrixMul.autotb.v" Line 867
+run: Time (s): cpu = 00:00:00.25 ; elapsed = 00:12:44 . Memory (MB): peak = 342.816 ; gain = 0.000 ; free physical = 150771 ; free virtual = 232266
+## quit
+INFO: [Common 17-206] Exiting xsim at Sun Dec 10 23:04:38 2017...

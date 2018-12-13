@@ -1,0 +1,195 @@
+
+
+================================================================
+== Vivado HLS Report for 'matrixMul_matrixMul_TRN_6'
+================================================================
+* Date:           Sun Dec 10 22:51:05 2017
+
+* Version:        2016.2 (Build 1577090 on Thu Jun 02 16:59:10 MDT 2016)
+* Project:        matmul
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      8.75|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-----------------+-----+-----+----------+-----------+-----------+------+----------+
+        |                 |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |    Loop Name    | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +-----------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1         |    ?|    ?|         ?|          -|          -|     ?|    no    |
+        | + Loop 1.1      |    ?|    ?|         ?|          -|          -|     ?|    no    |
+        |  ++ Loop 1.1.1  |    ?|    ?|         2|          -|          -|     ?|    no    |
+        +-----------------+-----+-----+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       0|    268|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        -|      -|       -|      -|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|    162|
+|Register         |        -|      -|     477|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|      0|     477|    430|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|      0|   ~0   |   ~0  |
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------------+----------+-------+---+----+------------+------------+
+    |     Variable Name     | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------------+----------+-------+---+----+------------+------------+
+    |next_mul1_fu_202_p2    |     +    |      0|  0|  32|          32|          32|
+    |next_mul_fu_207_p2     |     +    |      0|  0|  32|          32|          32|
+    |threadIdx_x_fu_269_p2  |     +    |      0|  0|  32|          32|           1|
+    |threadIdx_z_fu_196_p2  |     +    |      0|  0|  32|          32|           1|
+    |tmp_1_fu_217_p2        |     +    |      0|  0|  32|          32|           1|
+    |tmp_2_fu_232_p2        |     +    |      0|  0|  32|          32|          32|
+    |tmp_5_fu_279_p2        |     +    |      0|  0|  10|          10|          10|
+    |tmp_7_fu_227_p2        |     +    |      0|  0|  32|          32|          32|
+    |exitcond1_fu_212_p2    |   icmp   |      0|  0|  11|          32|          32|
+    |exitcond2_fu_191_p2    |   icmp   |      0|  0|  11|          32|          32|
+    |exitcond_fu_264_p2     |   icmp   |      0|  0|  11|          32|          32|
+    |ap_sig_161             |    or    |      0|  0|   1|           1|           1|
+    +-----------------------+----------+-------+---+----+------------+------------+
+    |Total                  |          |      0|  0| 268|         331|         238|
+    +-----------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +---------------------+----+-----------+-----+-----------+
+    |         Name        | LUT| Input Size| Bits| Total Bits|
+    +---------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm            |   2|          8|    1|          8|
+    |phi_mul1_reg_169     |  32|          2|   32|         64|
+    |phi_mul_reg_158      |  32|          2|   32|         64|
+    |threadIdx_2_reg_136  |  32|          2|   32|         64|
+    |threadIdx_reg_180    |  32|          2|   32|         64|
+    |threadIdx_y_reg_147  |  32|          2|   32|         64|
+    +---------------------+----+-----------+-----+-----------+
+    |Total                | 162|         18|  161|        328|
+    +---------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +---------------------+----+----+-----+-----------+
+    |         Name        | FF | LUT| Bits| Const Bits|
+    +---------------------+----+----+-----+-----------+
+    |A_addr_read_reg_392  |  32|   0|   32|          0|
+    |B_addr_read_reg_402  |  32|   0|   32|          0|
+    |ap_CS_fsm            |   7|   0|    7|          0|
+    |next_mul1_reg_334    |  32|   0|   32|          0|
+    |next_mul_reg_339     |  32|   0|   32|          0|
+    |phi_mul1_reg_169     |  32|   0|   32|          0|
+    |phi_mul_reg_158      |  32|   0|   32|          0|
+    |threadIdx_2_reg_136  |  32|   0|   32|          0|
+    |threadIdx_reg_180    |  32|   0|   32|          0|
+    |threadIdx_x_reg_387  |  32|   0|   32|          0|
+    |threadIdx_y_reg_147  |  32|   0|   32|          0|
+    |threadIdx_z_reg_329  |  32|   0|   32|          0|
+    |tmp_1_reg_347        |  32|   0|   32|          0|
+    |tmp_2_reg_362        |  32|   0|   32|          0|
+    |tmp_5_cast_reg_379   |   6|   0|   10|          4|
+    |tmp_5_reg_397        |  10|   0|   10|          0|
+    |tmp_7_reg_357        |  32|   0|   32|          0|
+    |tmp_reg_352          |   6|   0|    6|          0|
+    +---------------------+----+----+-----+-----------+
+    |Total                | 477|   0|  481|          4|
+    +---------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++---------------+-----+-----+------------+---------------------------+--------------+
+|   RTL Ports   | Dir | Bits|  Protocol  |       Source Object       |    C Type    |
++---------------+-----+-----+------------+---------------------------+--------------+
+|ap_clk         |  in |    1| ap_ctrl_hs | matrixMul_matrixMul_TRN_6 | return value |
+|ap_rst         |  in |    1| ap_ctrl_hs | matrixMul_matrixMul_TRN_6 | return value |
+|ap_start       |  in |    1| ap_ctrl_hs | matrixMul_matrixMul_TRN_6 | return value |
+|ap_done        | out |    1| ap_ctrl_hs | matrixMul_matrixMul_TRN_6 | return value |
+|ap_idle        | out |    1| ap_ctrl_hs | matrixMul_matrixMul_TRN_6 | return value |
+|ap_ready       | out |    1| ap_ctrl_hs | matrixMul_matrixMul_TRN_6 | return value |
+|blockDim_x     |  in |   32|   ap_none  |         blockDim_x        |    scalar    |
+|blockDim_y     |  in |   32|   ap_none  |         blockDim_y        |    scalar    |
+|blockDim_z     |  in |   32|   ap_none  |         blockDim_z        |    scalar    |
+|As_address0    | out |    8|  ap_memory |             As            |     array    |
+|As_ce0         | out |    1|  ap_memory |             As            |     array    |
+|As_we0         | out |    1|  ap_memory |             As            |     array    |
+|As_d0          | out |   32|  ap_memory |             As            |     array    |
+|A_req_din      | out |    1|   ap_bus   |             A             |    pointer   |
+|A_req_full_n   |  in |    1|   ap_bus   |             A             |    pointer   |
+|A_req_write    | out |    1|   ap_bus   |             A             |    pointer   |
+|A_rsp_empty_n  |  in |    1|   ap_bus   |             A             |    pointer   |
+|A_rsp_read     | out |    1|   ap_bus   |             A             |    pointer   |
+|A_address      | out |   32|   ap_bus   |             A             |    pointer   |
+|A_datain       |  in |   32|   ap_bus   |             A             |    pointer   |
+|A_dataout      | out |   32|   ap_bus   |             A             |    pointer   |
+|A_size         | out |   32|   ap_bus   |             A             |    pointer   |
+|a_r            |  in |   32|   ap_none  |            a_r            |    scalar    |
+|wA             |  in |   32|   ap_none  |             wA            |    scalar    |
+|Bs_address0    | out |    8|  ap_memory |             Bs            |     array    |
+|Bs_ce0         | out |    1|  ap_memory |             Bs            |     array    |
+|Bs_we0         | out |    1|  ap_memory |             Bs            |     array    |
+|Bs_d0          | out |   32|  ap_memory |             Bs            |     array    |
+|B_req_din      | out |    1|   ap_bus   |             B             |    pointer   |
+|B_req_full_n   |  in |    1|   ap_bus   |             B             |    pointer   |
+|B_req_write    | out |    1|   ap_bus   |             B             |    pointer   |
+|B_rsp_empty_n  |  in |    1|   ap_bus   |             B             |    pointer   |
+|B_rsp_read     | out |    1|   ap_bus   |             B             |    pointer   |
+|B_address      | out |   32|   ap_bus   |             B             |    pointer   |
+|B_datain       |  in |   32|   ap_bus   |             B             |    pointer   |
+|B_dataout      | out |   32|   ap_bus   |             B             |    pointer   |
+|B_size         | out |   32|   ap_bus   |             B             |    pointer   |
+|b_r            |  in |   32|   ap_none  |            b_r            |    scalar    |
+|wB             |  in |   32|   ap_none  |             wB            |    scalar    |
++---------------+-----+-----+------------+---------------------------+--------------+
+

@@ -1,0 +1,25 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+<sourceFile name="">
+<directive functionLabel="" functionName="matrixMul" label="">
+<pragma name="INTERFACE">
+<option name="ap_bus" positionalBoolean="mode" value=""/>
+<option name="depth" value="3840"/>
+<option name="port" positionalBoolean="4" value="A"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="matrixMul" label="">
+<pragma name="INTERFACE">
+<option name="ap_bus" positionalBoolean="mode" value=""/>
+<option name="depth" value="6144"/>
+<option name="port" positionalBoolean="4" value="B"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="matrixMul" label="">
+<pragma name="INTERFACE">
+<option name="ap_bus" positionalBoolean="mode" value=""/>
+<option name="depth" value="10240"/>
+<option name="port" positionalBoolean="4" value="C"/>
+</pragma>
+</directive>
+</sourceFile>
+</AutoPilot:ProjectResources>

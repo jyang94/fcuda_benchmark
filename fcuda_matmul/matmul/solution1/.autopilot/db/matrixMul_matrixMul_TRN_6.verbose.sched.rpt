@@ -1,0 +1,291 @@
+
+
+================================================================
+== Vivado HLS Report for 'matrixMul_matrixMul_TRN_6'
+================================================================
+* Date:           Sun Dec 10 22:51:05 2017
+
+* Version:        2016.2 (Build 1577090 on Thu Jun 02 16:59:10 MDT 2016)
+* Project:        matmul
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      8.75|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-----------------+-----+-----+----------+-----------+-----------+------+----------+
+        |                 |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |    Loop Name    | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +-----------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1         |    ?|    ?|         ?|          -|          -|     ?|    no    |
+        | + Loop 1.1      |    ?|    ?|         ?|          -|          -|     ?|    no    |
+        |  ++ Loop 1.1.1  |    ?|    ?|         2|          -|          -|     ?|    no    |
+        +-----------------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 7
+* Pipeline: 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!exitcond2)
+3 --> 
+	2  / (exitcond1)
+	4  / (!exitcond1)
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	3  / (exitcond)
+	7  / (!exitcond)
+7 --> 
+	6  / true
+* FSM state operations: 
+
+ <State 1>: 1.57ns
+ST_1: stg_8 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_SpecInterface(float* %B, [7 x i8]* @p_str3, i32 0, i32 0, i32 0, i32 6144, [1 x i8]* @p_str4, [1 x i8]* @p_str4, [1 x i8]* @p_str4, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str4) nounwind
+
+ST_1: stg_9 [1/1] 0.00ns
+:1  call void (...)* @_ssdm_op_SpecInterface(float* %A, [7 x i8]* @p_str3, i32 0, i32 0, i32 0, i32 3840, [1 x i8]* @p_str4, [1 x i8]* @p_str4, [1 x i8]* @p_str4, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str4) nounwind
+
+ST_1: wB_read [1/1] 0.00ns
+:2  %wB_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %wB)
+
+ST_1: b_read [1/1] 0.00ns
+:3  %b_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %b_r)
+
+ST_1: wA_read [1/1] 0.00ns
+:4  %wA_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %wA)
+
+ST_1: a_read [1/1] 0.00ns
+:5  %a_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %a_r)
+
+ST_1: blockDim_z_read [1/1] 0.00ns
+:6  %blockDim_z_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %blockDim_z)
+
+ST_1: blockDim_y_read [1/1] 0.00ns
+:7  %blockDim_y_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %blockDim_y)
+
+ST_1: blockDim_x_read [1/1] 0.00ns
+:8  %blockDim_x_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %blockDim_x)
+
+ST_1: stg_17 [1/1] 1.57ns
+:9  br label %.loopexit30
+
+
+ <State 2>: 4.09ns
+ST_2: threadIdx_2 [1/1] 0.00ns
+.loopexit30:0  %threadIdx_2 = phi i32 [ 0, %0 ], [ %threadIdx_z, %.preheader ]
+
+ST_2: exitcond2 [1/1] 2.52ns
+.loopexit30:1  %exitcond2 = icmp eq i32 %threadIdx_2, %blockDim_z_read
+
+ST_2: threadIdx_z [1/1] 2.44ns
+.loopexit30:2  %threadIdx_z = add i32 %threadIdx_2, 1
+
+ST_2: stg_21 [1/1] 1.57ns
+.loopexit30:3  br i1 %exitcond2, label %.loopexit, label %.preheader
+
+ST_2: stg_22 [1/1] 0.00ns
+.loopexit:0  ret void
+
+
+ <State 3>: 2.52ns
+ST_3: threadIdx_y [1/1] 0.00ns
+.preheader:0  %threadIdx_y = phi i32 [ 0, %.loopexit30 ], [ %tmp_1, %2 ]
+
+ST_3: phi_mul [1/1] 0.00ns
+.preheader:1  %phi_mul = phi i32 [ 0, %.loopexit30 ], [ %next_mul, %2 ]
+
+ST_3: phi_mul1 [1/1] 0.00ns
+.preheader:2  %phi_mul1 = phi i32 [ 0, %.loopexit30 ], [ %next_mul1, %2 ]
+
+ST_3: next_mul1 [1/1] 2.44ns
+.preheader:3  %next_mul1 = add i32 %phi_mul1, %wB_read
+
+ST_3: next_mul [1/1] 2.44ns
+.preheader:4  %next_mul = add i32 %phi_mul, %wA_read
+
+ST_3: exitcond1 [1/1] 2.52ns
+.preheader:5  %exitcond1 = icmp eq i32 %threadIdx_y, %blockDim_y_read
+
+ST_3: tmp_1 [1/1] 2.44ns
+.preheader:6  %tmp_1 = add i32 %threadIdx_y, 1
+
+ST_3: stg_30 [1/1] 0.00ns
+.preheader:7  br i1 %exitcond1, label %.loopexit30, label %1
+
+ST_3: tmp [1/1] 0.00ns
+:0  %tmp = trunc i32 %threadIdx_y to i6
+
+ST_3: tmp_7 [1/1] 2.44ns
+:2  %tmp_7 = add i32 %phi_mul, %a_read
+
+ST_3: tmp_2 [1/1] 2.44ns
+:4  %tmp_2 = add i32 %phi_mul1, %b_read
+
+
+ <State 4>: 8.75ns
+ST_4: tmp_s [1/1] 0.00ns
+:3  %tmp_s = zext i32 %tmp_7 to i64
+
+ST_4: tmp_3 [1/1] 0.00ns
+:5  %tmp_3 = zext i32 %tmp_2 to i64
+
+ST_4: A_addr [1/1] 0.00ns
+:6  %A_addr = getelementptr inbounds float* %A, i64 %tmp_s
+
+ST_4: B_addr [1/1] 0.00ns
+:7  %B_addr = getelementptr inbounds float* %B, i64 %tmp_3
+
+ST_4: A_addr_1_rd_req [2/2] 8.75ns
+:8  %A_addr_1_rd_req = call i1 @_ssdm_op_ReadReq.ap_bus.floatP(float* %A_addr, i32 %blockDim_x_read)
+
+ST_4: B_addr_1_rd_req [2/2] 8.75ns
+:9  %B_addr_1_rd_req = call i1 @_ssdm_op_ReadReq.ap_bus.floatP(float* %B_addr, i32 %blockDim_x_read)
+
+
+ <State 5>: 8.75ns
+ST_5: tmp_5_cast [1/1] 0.00ns
+:1  %tmp_5_cast = call i10 @_ssdm_op_BitConcatenate.i10.i6.i4(i6 %tmp, i4 0)
+
+ST_5: A_addr_1_rd_req [1/2] 8.75ns
+:8  %A_addr_1_rd_req = call i1 @_ssdm_op_ReadReq.ap_bus.floatP(float* %A_addr, i32 %blockDim_x_read)
+
+ST_5: B_addr_1_rd_req [1/2] 8.75ns
+:9  %B_addr_1_rd_req = call i1 @_ssdm_op_ReadReq.ap_bus.floatP(float* %B_addr, i32 %blockDim_x_read)
+
+ST_5: stg_43 [1/1] 1.57ns
+:10  br label %2
+
+
+ <State 6>: 8.75ns
+ST_6: threadIdx [1/1] 0.00ns
+:0  %threadIdx = phi i32 [ 0, %1 ], [ %threadIdx_x, %3 ]
+
+ST_6: exitcond [1/1] 2.52ns
+:1  %exitcond = icmp eq i32 %threadIdx, %blockDim_x_read
+
+ST_6: threadIdx_x [1/1] 2.44ns
+:2  %threadIdx_x = add i32 %threadIdx, 1
+
+ST_6: stg_47 [1/1] 0.00ns
+:3  br i1 %exitcond, label %.preheader, label %3
+
+ST_6: A_addr_read [1/1] 8.75ns
+:0  %A_addr_read = call float @_ssdm_op_Read.ap_bus.floatP(float* %A_addr)
+
+ST_6: tmp_4 [1/1] 0.00ns
+:1  %tmp_4 = trunc i32 %threadIdx to i10
+
+ST_6: tmp_5 [1/1] 1.84ns
+:2  %tmp_5 = add i10 %tmp_5_cast, %tmp_4
+
+ST_6: B_addr_read [1/1] 8.75ns
+:7  %B_addr_read = call float @_ssdm_op_Read.ap_bus.floatP(float* %B_addr)
+
+
+ <State 7>: 2.71ns
+ST_7: tmp_14_cast [1/1] 0.00ns
+:3  %tmp_14_cast = zext i10 %tmp_5 to i64
+
+ST_7: As_addr [1/1] 0.00ns
+:4  %As_addr = getelementptr [256 x float]* %As, i64 0, i64 %tmp_14_cast
+
+ST_7: Bs_addr [1/1] 0.00ns
+:5  %Bs_addr = getelementptr [256 x float]* %Bs, i64 0, i64 %tmp_14_cast
+
+ST_7: stg_55 [1/1] 2.71ns
+:6  store float %A_addr_read, float* %As_addr, align 4
+
+ST_7: stg_56 [1/1] 2.71ns
+:8  store float %B_addr_read, float* %Bs_addr, align 4
+
+ST_7: stg_57 [1/1] 0.00ns
+:9  br label %2
+
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ No timing violations. 
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

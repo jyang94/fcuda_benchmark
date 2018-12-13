@@ -1,0 +1,16 @@
+INFO: [HLS 200-10] Running '/opt/xilinx/vivado/2016.2/Vivado_HLS/2016.2/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'xu67' on host 'csl-403a-01.csl.illinois.edu' (Linux_x86_64 version 2.6.32-696.1.1.el6.x86_64) on Sat May 20 01:01:09 CDT 2017
+INFO: [HLS 200-10] On os "CentOS release 6.9 (Final)"
+INFO: [HLS 200-10] In directory '/home/xu67/thesis_fcuda/fcuda/fcuda-benchmarks/matmul/fcuda_gen/vec_add_hls/solution1/csim/build'
+../../../../fcuda_gen_matmul.c:1:10: fatal error: 'fcuda.h' file not found
+#include <fcuda.h>
+         ^
+1 error generated.
+CRITICAL WARNING: [HLS 200-101] Message ID '1-1' value invalid for uint argument.
+
+FORMAT
+  ap_puts_err [OPTIONS] [ Message namespace] [ Message ID] [ Message string]
+      <string>
+      <uint>
+      <string>
+

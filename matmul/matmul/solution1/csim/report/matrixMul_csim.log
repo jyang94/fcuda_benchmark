@@ -1,0 +1,6 @@
+   Compiling ../../../../matrixMul.cpp in debug mode
+   Compiling ../../../../fcuda_gen/fcuda_gen_matmul.cpp in debug mode
+   Generating csim.exe
+error =  0.0000
+PASSED.
+INFO: [SIM 1] CSim done with 0 errors.
